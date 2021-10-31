@@ -1,0 +1,13 @@
+<!--TODO: Define click callback to load about me information-->
+<button class="btn btn-light" (click)="aboutMe()">Load info about me</button>
+<!--TODO: replace ??? to bind to name-->
+<h3>Logged in user: {{name}}</h3>
+<!--TODO: bind img src's to profile_pic-->
+<!--<img src="../../../assets/unknown.jpg">-->
+<a [href]="profile_link" target="_blank"><img [src]="profile_pic"></a>
+<p>
+	<!--TODO: bind link's href to profile_link-->
+	<!--update variables here, then bind them to the appropriate places in the html file: will populate left side with user's info-->
+	<!--<a class="btn btn-light" target="_blank">Open profile on Spotify</a>-->	
+	<a class="btn btn-light" target="_blank" [href]="profile_link">Open profile on Spotify</a>
+</p>
