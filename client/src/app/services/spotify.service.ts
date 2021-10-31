@@ -9,12 +9,14 @@ import { TrackData } from '../data/track-data';
 import { ResourceData } from '../data/resource-data';
 import { ProfileData } from '../data/profile-data';
 import { TrackFeature } from '../data/track-feature';
+//import { EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyService {
 	expressBaseUrl:string = 'http://localhost:8888';
+  //searchChanged = new EventEmitter<ResourceData[]>();
 
   constructor(private http:HttpClient) { }
 
@@ -58,6 +60,9 @@ export class SpotifyService {
         console.log("failed return");
         return null;
       });*/
+      //var promise = this.sendRequestToExpress(str);
+      //this.searchChanged.emit(promise.then());//emit data
+      //return promise;
     return this.sendRequestToExpress(str);
   }
 

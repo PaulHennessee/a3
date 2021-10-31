@@ -4,6 +4,7 @@ import { ArtistData } from '../../data/artist-data';
 import { AlbumData } from '../../data/album-data';
 import { TrackData } from '../../data/track-data';
 import { ResourceData } from '../../data/resource-data';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -16,6 +17,7 @@ export class SearchComponent implements OnInit {
   searchCategory:string = 'artist';
   searchCategories:string[] = ['artist', 'album', 'track'];
   resources:ResourceData[];
+  searchChanged = new EventEmitter<ResourceData[]>();
 
   constructor(private spotifyService:SpotifyService) { }
 
@@ -33,6 +35,7 @@ export class SearchComponent implements OnInit {
     //use carousel component for artists and albums
     //use track-list for tracks.
     console.log("back in search");
+    this.searchChanged.emit(this.resources);//emit data
     res.then((resource)=>{
       console.log("success");
       console.log("resource: "+resource.toString());

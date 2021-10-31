@@ -1,16 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SpotifyService } from '../../services/spotify.service';
 import { ResourceData } from '../../data/resource-data';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.css'],
+  providers: [ SpotifyService ]
 })
 export class CarouselComponent implements OnInit {
 	@Input() carouselId:string;
 	@Input() resources:ResourceData[];
 
-  constructor() { }
+  constructor(private searchComp:SearchComponent) { }
 
   ngOnInit() {
     //edit this to be populated with carousel cards.
@@ -20,7 +23,11 @@ export class CarouselComponent implements OnInit {
     <!--"let first=first" sets the "first" variable to be true for the first card in the carousel. The [ngClass] assigns the active property to it-->
     <!--https://stackoverflow.com/questions/44288434/angular-2-ngfor-first-last-index-loop--> */
     
-
+    this.searchComp.searchChanged.subscribe(
+      (data:ResourceData[])=>{
+        this.resources = data;
+      }
+    );
   }
 
 }
