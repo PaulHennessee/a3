@@ -34,15 +34,15 @@ export class SearchComponent implements OnInit {
     //once you get res, load the carousel with cards containing this info
     //use carousel component for artists and albums
     //use track-list for tracks.
-    console.log("back in search");
+    //console.log("back in search");
     this.searchChanged.emit(this.resources);//emit data
     res.then((resource)=>{
-      console.log("success");
-      console.log("resource: "+resource.toString());
+      //console.log("success");
+      //console.log("resource: "+resource.toString());
       //this.resources.push(resource);
     }, (resource)=>{
-      console.log("failure");
-    });
+      //console.log("failure");
+    });//*/
     
   }
 
