@@ -16,7 +16,6 @@ export class CarouselComponent implements OnInit {
   constructor(private searchComp:SearchComponent) {
     this.carouselId = "";
     this.resources = [];
-    console.log("carousel constructor: resources size: "+this.resources.length);
   }
 
   ngOnInit() {
@@ -28,12 +27,14 @@ export class CarouselComponent implements OnInit {
     <!--https://stackoverflow.com/questions/44288434/angular-2-ngfor-first-last-index-loop--> */
     this.searchComp.searchChanged.subscribe(
       (data:ResourceData[])=>{
+        console.log("searchChanged:");
         this.resources = data;
+        console.log(data);
+        console.log("resources size: "+this.resources.length);
+        
       }
     );
-    /*console.log("carousel init: resources size: "+this.resources.length);
-    *ngFor
-    *ngFor="let carousel of carousel; let first=first" [value]="carouselId" [checked]="first" class="carousel-item" [ngClass]="{'active': first}"*/
+    
   }
 
 }

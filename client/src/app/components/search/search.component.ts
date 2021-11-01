@@ -38,8 +38,22 @@ export class SearchComponent implements OnInit {
     this.searchChanged.emit(this.resources);//emit data
     res.then((resource)=>{
       //console.log("success");
-      //console.log("resource: "+resource.toString());
-      //this.resources.push(resource);
+      console.log("resource: "+resource.toString());
+      console.log(resource);
+      console.log(resource["artists"]);
+      console.log(resource["artists"]["items"][0]);
+      //resource["artists"]
+      /*resource["artists"].forEach((data)=>{
+        console.log(data);
+      });//*/
+      this.resources = resource["artists"]["items"];
+      console.log("resources length: "+this.resources.length);
+      //var iter = resource1.values();
+      /*for(var i in resource1){
+        this.resources.push(i);
+      }*/
+      //this.resources = resource.slice();
+      
     }, (resource)=>{
       //console.log("failure");
     });//*/
