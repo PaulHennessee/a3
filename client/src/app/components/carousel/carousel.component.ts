@@ -27,10 +27,16 @@ export class CarouselComponent implements OnInit {
     <!--https://stackoverflow.com/questions/44288434/angular-2-ngfor-first-last-index-loop--> */
     this.searchComp.searchChanged.subscribe(
       (data:ResourceData[])=>{
-        console.log("searchChanged:");
+        //console.log("searchChanged:");
+        //console.log("data size: "+data.length);
         this.resources = data;
-        console.log(data);
-        console.log("resources size: "+this.resources.length);
+        //console.log(data);
+        data.forEach((d)=>{
+          //console.log('d:');
+          //console.log(d);
+
+        })
+        //console.log("resources size: "+this.resources.length);
         
       }
     );

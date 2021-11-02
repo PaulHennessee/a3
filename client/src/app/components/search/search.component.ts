@@ -19,9 +19,11 @@ export class SearchComponent implements OnInit {
   resources:ResourceData[];
   searchChanged = new EventEmitter<ResourceData[]>();
 
-  constructor(private spotifyService:SpotifyService) { }
+  constructor(private spotifyService:SpotifyService) {
+    this.resources = [];
+   }
 
-  ngOnInit() {}
+  ngOnInit() {  }
 
   search() {
     //TODO: call search function in spotifyService and parse response
@@ -29,35 +31,86 @@ export class SearchComponent implements OnInit {
     /*console.log("searchcalled==============================");
     console.log("searchString: |"+this.searchString+"|");
     console.log("searchCategory: |"+this.searchCategory+"|");//*/
-
+    this.resources = [];
     var res = this.spotifyService.searchFor(this.searchCategory, this.searchString);
     //once you get res, load the carousel with cards containing this info
     //use carousel component for artists and albums
     //use track-list for tracks.
     //console.log("back in search");
-    this.searchChanged.emit(this.resources);//emit data
+    
     res.then((resource)=>{
-      //console.log("success");
-      console.log("resource: "+resource.toString());
+      /*console.log("success=================================================================");
+      console.log("resource: ");
       console.log(resource);
+      console.log("artists");
       console.log(resource["artists"]);
-      console.log(resource["artists"]["items"][0]);
-      //resource["artists"]
-      /*resource["artists"].forEach((data)=>{
-        console.log(data);
-      });//*/
-      this.resources = resource["artists"]["items"];
-      console.log("resources length: "+this.resources.length);
-      //var iter = resource1.values();
-      /*for(var i in resource1){
-        this.resources.push(i);
-      }*/
-      //this.resources = resource.slice();
-      
+      if(this.searchCategory == "artist"){
+        console.log("resources length before: "+this.resources.length);
+        var walker = resource["artists"].next;
+        while(walker != null){
+          //fill loop
+          resource["artists"]["items"].forEach((data)=>{
+            //console.log("artist iteration");
+            var n:ArtistData = new ArtistData(data);
+            //console.log(n);
+            this.resources.push(n);
+            //console.log("data: ");
+            //console.log(data);
+          });
+          walker = resource["artists"].next;
+        }
+        
+      }
+      else if(this.searchCategory == "album"){
+        resource["albums"]["items"].forEach((data)=>{
+          //console.log("album iteration");
+          var n:AlbumData = new AlbumData(data);
+          //console.log(n);
+          this.resources.push(n);
+          //console.log("data: ");
+          //console.log(data);
+        });///
+      }
+      else{
+        //do track stuff
+      }
+      console.log("resources length after: "+this.resources.length);
+      this.searchChanged.emit(this.resources);//emit data*/
+      //OLD WORK
+      console.log("success=================================================================");
+      console.log("resource: ");
+      console.log(resource);
+      console.log("artists");
+      console.log(resource["artists"]);
+      if(this.searchCategory == "artist"){
+        console.log("resources length before: "+this.resources.length);
+        resource["artists"]["items"].forEach((data)=>{
+          //console.log("artist iteration");
+          var n:ArtistData = new ArtistData(data);
+          //console.log(n);
+          this.resources.push(n);
+          //console.log("data: ");
+          //console.log(data);
+        });
+      }
+      else if(this.searchCategory == "album"){
+        resource["albums"]["items"].forEach((data)=>{
+          //console.log("album iteration");
+          var n:AlbumData = new AlbumData(data);
+          //console.log(n);
+          this.resources.push(n);
+          //console.log("data: ");
+          //console.log(data);
+        });//
+      }
+      else{
+        //do track stuff
+      }
+      console.log("resources length after: "+this.resources.length);
+      this.searchChanged.emit(this.resources);//emit data*/
     }, (resource)=>{
       //console.log("failure");
     });//*/
-    
   }
 
 }
