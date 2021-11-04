@@ -48,7 +48,8 @@ export class SearchComponent implements OnInit {
       console.log("tracks");
       console.log(resource["tracks"]);//*/
       if(this.searchCategory == "artist"){
-        console.log("resources length before: "+this.resources.length);
+        this.resources = [];
+        //console.log("resources length before: "+this.resources.length);
         resource["artists"]["items"].forEach((data)=>{
           //console.log("artist iteration");
           var n:ArtistData = new ArtistData(data);
@@ -74,6 +75,7 @@ export class SearchComponent implements OnInit {
         }*/
       }
       else if(this.searchCategory == "album"){
+        this.resources = [];
         resource["albums"]["items"].forEach((data)=>{
           //console.log("album iteration");
           var n:AlbumData = new AlbumData(data);
@@ -84,6 +86,7 @@ export class SearchComponent implements OnInit {
         });//
       }
       else{
+        this.resources = [];
         resource["tracks"]["items"].forEach((data)=>{
           //console.log("album iteration");
           var n:TrackData = new TrackData(data);
@@ -93,7 +96,7 @@ export class SearchComponent implements OnInit {
           //console.log(data);
         });//
       }
-      console.log("resources length after: "+this.resources.length);
+      //console.log("resources length after: "+this.resources.length);
       this.searchChanged.emit(this.resources);//emit data*/
     }, (resource)=>{
       //console.log("failure");

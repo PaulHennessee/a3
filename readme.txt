@@ -4,7 +4,7 @@
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
 */15
-- 1/2 Communicating with the webserver
+- 2/2 Communicating with the webserver
 - 2/2 Populating information about the user
 - 2.5/3 Populating the search component
 - */3 Artist page
@@ -20,7 +20,7 @@ Hour Log
 2   10/30/2021  9       Worked more on Part 2B: Server communication, Carousel Component + Carousel Card Component
 2   10/31/2021  11      Worked on Part 2B
 2   11/2/2021   13      Got 2B working for the most part.
-1   11/4/2021   14      got searchComponent and carousel to a passable point, started tracklist.
+3   11/4/2021   16      got searchComponent and carousel to a passable point, tracklist comopleted.
 
 Total Time:
 
@@ -46,4 +46,4 @@ No
 
 
 6. Is there anything special we need to know in order to run your code?
-No
+For Part 2B: Populating Search Component: Carousel displays all carousel components. We were not sure how to initialize all of the carousel components but only have one show up at a time.
