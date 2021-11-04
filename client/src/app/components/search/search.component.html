@@ -13,7 +13,10 @@
 <button class="btn btn-light" (click)="search()">Search</button>
 <!--TODO: Display a carousel component if searching for an artist or album. Bind carousel's resources and give it a static carouselId.-->
 <div *ngIf="searchCategory=='artist' || searchCategory=='album'">
-	<app-carousel *ngFor="let res of resources; let i = index" [carouselId]="i" [resources]="resources.slice(i, i+1)"></app-carousel>
+	<div *ngFor="let res of resources; let i = index">
+		<app-carousel [carouselId]="i" [resources]="resources.slice(i, i+1)"></app-carousel>
+	</div>
+	
 	<!--<app-carousel [carouselId]="1" [resources]="resources"></app-carousel>-->
 </div>
 <div *ngIf="searchCategory=='track'">
