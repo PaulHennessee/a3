@@ -11,11 +11,11 @@
     <!--<md-button-toggle *ngFor="let indicador of indicadores; let first = first;" [value]="indicador.id" [checked]="first">-->
     <app-carousel-card *ngFor="let resourceData of resources; let first=first" [resource]="resourceData"></app-carousel-card>
   </div>
-  <a class="carousel-control-prev" href="#{{carouselId}}" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#{{carouselId-1}}" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#{{carouselId}}" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#{{carouselId+1}}" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
