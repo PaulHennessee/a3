@@ -44,8 +44,20 @@ export class SearchComponent implements OnInit {
       console.log(resource);
       console.log("artists");
       console.log(resource["artists"]);
+      console.log("tracks");
+      console.log(resource["tracks"]);//*/
       if(this.searchCategory == "artist"){
         console.log("resources length before: "+this.resources.length);
+        resource["artists"]["items"].forEach((data)=>{
+          //console.log("artist iteration");
+          var n:ArtistData = new ArtistData(data);
+          //console.log(n);
+          this.resources.push(n);
+          //console.log("data: ");
+          //console.log(data);
+        });
+
+        /*console.log("resources length before: "+this.resources.length);
         var walker = resource["artists"].next;
         while(walker != null){
           //fill loop
@@ -58,40 +70,7 @@ export class SearchComponent implements OnInit {
             //console.log(data);
           });
           walker = resource["artists"].next;
-        }
-        
-      }
-      else if(this.searchCategory == "album"){
-        resource["albums"]["items"].forEach((data)=>{
-          //console.log("album iteration");
-          var n:AlbumData = new AlbumData(data);
-          //console.log(n);
-          this.resources.push(n);
-          //console.log("data: ");
-          //console.log(data);
-        });///
-      }
-      else{
-        //do track stuff
-      }
-      console.log("resources length after: "+this.resources.length);
-      this.searchChanged.emit(this.resources);//emit data*/
-      //OLD WORK
-      console.log("success=================================================================");
-      console.log("resource: ");
-      console.log(resource);
-      console.log("artists");
-      console.log(resource["artists"]);
-      if(this.searchCategory == "artist"){
-        console.log("resources length before: "+this.resources.length);
-        resource["artists"]["items"].forEach((data)=>{
-          //console.log("artist iteration");
-          var n:ArtistData = new ArtistData(data);
-          //console.log(n);
-          this.resources.push(n);
-          //console.log("data: ");
-          //console.log(data);
-        });
+        }*/
       }
       else if(this.searchCategory == "album"){
         resource["albums"]["items"].forEach((data)=>{
@@ -104,7 +83,14 @@ export class SearchComponent implements OnInit {
         });//
       }
       else{
-        //do track stuff
+        resource["tracks"]["items"].forEach((data)=>{
+          //console.log("album iteration");
+          var n:TrackData = new TrackData(data);
+          //console.log(n);
+          this.resources.push(n);
+          //console.log("data: ");
+          //console.log(data);
+        });//
       }
       console.log("resources length after: "+this.resources.length);
       this.searchChanged.emit(this.resources);//emit data*/
