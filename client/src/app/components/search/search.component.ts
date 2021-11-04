@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { SpotifyService } from '../../services/spotify.service';
 import { ArtistData } from '../../data/artist-data';
 import { AlbumData } from '../../data/album-data';

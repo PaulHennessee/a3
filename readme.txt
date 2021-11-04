@@ -6,7 +6,7 @@
 */15
 - 1/2 Communicating with the webserver
 - 2/2 Populating information about the user
-- 3/3 Populating the search component
+- 2.5/3 Populating the search component
 - */3 Artist page
 - */2.5 Album page
 - */2.5 Track page
@@ -20,6 +20,7 @@ Hour Log
 2   10/30/2021  9       Worked more on Part 2B: Server communication, Carousel Component + Carousel Card Component
 2   10/31/2021  11      Worked on Part 2B
 2   11/2/2021   13      Got 2B working for the most part.
+1   11/4/2021   14      got searchComponent and carousel to a passable point, started tracklist.
 
 Total Time:
 
