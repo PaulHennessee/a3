@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TrackData } from '../../data/track-data';
 
 @Component({
@@ -11,7 +12,7 @@ export class TrackListComponent implements OnInit {
 	@Input() hideArtist:boolean = false;
 	@Input() hideAlbum:boolean = false;
 
-  constructor() { this.tracks = [];}
+  constructor() { this.tracks = []; this.hideAlbum = false; this.hideArtist = false;}
 
   ngOnInit() {
   }
