@@ -8,7 +8,7 @@
 - 2/2 Populating information about the user
 - 2/3 Populating the search component
 - 3/3 Artist page
-- */2.5 Album page
+- 2.5/2.5 Album page
 - */2.5 Track page
 
 
@@ -21,9 +21,7 @@ Hour Log
 2   10/31/2021  11      Worked on Part 2B
 2   11/2/2021   13      Got 2B working for the most part.
 5   11/4/2021   18      got searchComponent and carousel to a passable point, tracklist comopleted. started artist page
-1   11/5/2021   19      got artist page working.
-
-next time: figure out how to get carousel loading on artist page. hide artist name in table on artist page. linking -> spotify pages?
+1   11/5/2021   19      got artist page working. got album page working
 
 Total Time:
 
@@ -41,7 +39,7 @@ bootstrap carousel: https://getbootstrap.com/docs/4.4/components/carousel/
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
-None
+Got help from Professor on the carousel component.
 
 
 5. Did you add a bonus feature to your submission? If so, what is it and how should we see it?

@@ -29,9 +29,15 @@ export class AlbumPageComponent implements OnInit {
   	//TODO: inject spotifyService and use it to get the album data and the tracks for the album
     var res = this.spotifyService.getAlbum(this.albumId);
     res.then((data)=>{
+      console.log("data")
       console.log(data);
       this.album = new AlbumData(data);
-      console.log(this.album);
+      /*console.log(this.album);
+      console.log("artists");
+      console.log(this.album.artists);
+      this.album.artists.forEach(element => {
+        console.log(element);
+      });*/
     });
 
     var track = this.spotifyService.getTracksForAlbum(this.albumId);
