@@ -4,19 +4,21 @@ import { TrackData } from '../../data/track-data';
 import { SearchComponent } from '../search/search.component';
 import { ArtistPageComponent } from 'src/app/pages/artist-page/artist-page.component';
 import { ResourceData } from 'src/app/data/resource-data';
+import { AlbumPageComponent } from 'src/app/pages/album-page/album-page.component';
 
 @Component({
   selector: 'app-track-list',
   templateUrl: './track-list.component.html',
   styleUrls: ['./track-list.component.css'],
-  providers: [ SearchComponent, ArtistPageComponent ]
+  providers: [ SearchComponent, ArtistPageComponent, AlbumPageComponent ]
 })
 export class TrackListComponent implements OnInit {
 	@Input() tracks:TrackData[];
 	@Input() hideArtist:boolean = false;
 	@Input() hideAlbum:boolean = false;
 
-  constructor(private searchComp:SearchComponent, private artist_pageComp:ArtistPageComponent) { this.tracks = []; this.hideAlbum = false; this.hideArtist = false;}
+  constructor(private searchComp:SearchComponent, private artist_pageComp:ArtistPageComponent, private album_pageComp:AlbumPageComponent) { this.tracks = []; this.hideAlbum = false; this.hideArtist = false;}
+  
 
   ngOnInit() {
     this.searchComp.searchChanged.subscribe(
@@ -49,6 +51,11 @@ export class TrackListComponent implements OnInit {
         })
         console.log("resources size: "+this.tracks.length);*/
         
+      }
+    );
+    this.album_pageComp.albumChanged.subscribe(
+      (data:TrackData[])=>{
+        this.tracks = data;
       }
     );
   }
