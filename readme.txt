@@ -48,4 +48,5 @@ No
 
 
 6. Is there anything special we need to know in order to run your code?
-For Part 2B: Populating Search Component: Carousel displays all carousel components. We were not sure how to initialize all of the carousel components but only have one show up at a time.
+For Part 2B: Populating Search Component: Carousel displays all carousel components.
+We were not sure how to initialize all of the carousel components but only have one show up at a time.
