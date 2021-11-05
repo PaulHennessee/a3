@@ -23,14 +23,17 @@
 			<td>{{i+1}}</td>
 			<td>
 				<!--TODO: link to the endpoint for that track, display the track's name-->
-				<a>{{track.name}}</a>
+				<a [href]="'http://localhost:4200/track/' + track.id" target="_blank">{{track.name}}</a>
 			</td>
 			<!--TODO: display the track's duration-->
 			<td>{{track.durationStr}}</td>
 			<!--TODO: Use *ngIf to hide if hideArtist is true; link to the first artist's endpoint and display the first artist's name-->
-			<td *ngIf="!hideArtist"><a [href]="track.primaryArtist.url">{{track.primaryArtist.name}}</a></td>
+			<td *ngIf="!hideArtist"><a [href]="'http://localhost:4200' + track.primaryArtist.url.substr(track.primaryArtist.url.indexOf('com') + 3)" target="_blank">{{track.primaryArtist.name}}</a></td>
 			<!--TODO: Use *ngIf to hide if hideAlbum is true; link to the album's endpoint and display the album's name-->
-			<td *ngIf="!hideAlbum"><a [href]="track.album.url">{{track.album.name}}</a></td>
+			<td *ngIf="!hideAlbum"><a [href]="'http://localhost:4200' + track.album.url.substr(track.album.url.indexOf('com') + 3)" target="_blank">{{track.album.name}}</a></td>
+			<!-- SAMPLE: -->
+			<!-- 'http://localhost:4200' + track.album.url.substr(track.album.url.indexOf('com') + 3) -->
+			<!-- 'http://localhost:4200' + track.primaryArtist.url.substr(track.primaryArtist.url.indexOf('com') + 3) -->
 		</tr>
 	</tbody>
 </table>
