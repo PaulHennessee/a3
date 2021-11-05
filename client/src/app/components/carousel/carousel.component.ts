@@ -2,18 +2,19 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { ResourceData } from '../../data/resource-data';
 import { SearchComponent } from '../search/search.component';
+import { ArtistPageComponent } from 'src/app/pages/artist-page/artist-page.component';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
-  providers: [ SpotifyService ]
+  providers: [ SpotifyService , ArtistPageComponent]
 })
 export class CarouselComponent implements OnInit {
 	@Input() carouselId:string;
 	@Input() resources:ResourceData[];
 
-  constructor(private searchComp:SearchComponent) {
+  constructor(private searchComp:SearchComponent, private artist_page:ArtistPageComponent) {
     this.carouselId = "";
     this.resources = [];
   }
@@ -38,7 +39,21 @@ export class CarouselComponent implements OnInit {
         })
         //console.log("resources size: "+this.resources.length);
         
-      }
+      });
+      this.artist_page.artistChanged.subscribe(
+        (data:ResourceData[])=>{
+          //console.log("searchChanged:");
+          //console.log("data size: "+data.length);
+          this.resources = data;
+          //console.log(data);
+          data.forEach((d)=>{
+            //console.log('d:');
+            //console.log(d);
+  
+          })
+          //console.log("resources size: "+this.resources.length);
+          
+        }
     );
     
   }

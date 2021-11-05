@@ -7,7 +7,7 @@
 - 2/2 Communicating with the webserver
 - 2/2 Populating information about the user
 - 2.5/3 Populating the search component
-- */3 Artist page
+- 2/3 Artist page
 - */2.5 Album page
 - */2.5 Track page
 
@@ -20,7 +20,9 @@ Hour Log
 2   10/30/2021  9       Worked more on Part 2B: Server communication, Carousel Component + Carousel Card Component
 2   10/31/2021  11      Worked on Part 2B
 2   11/2/2021   13      Got 2B working for the most part.
-3   11/4/2021   16      got searchComponent and carousel to a passable point, tracklist comopleted.
+5   11/4/2021   18      got searchComponent and carousel to a passable point, tracklist comopleted. started artist page
+
+next time: figure out how to get carousel loading on artist page. hide artist name in table on artist page. linking -> spotify pages?
 
 Total Time:
 

@@ -4,11 +4,14 @@ import { ArtistData } from '../../data/artist-data';
 import { TrackData } from '../../data/track-data';
 import { AlbumData } from '../../data/album-data';
 import { SpotifyService } from 'src/app/services/spotify.service';
+import { EventEmitter } from '@angular/core';
+import { ResourceData } from 'src/app/data/resource-data';
 
 @Component({
   selector: 'app-artist-page',
   templateUrl: './artist-page.component.html',
-  styleUrls: ['./artist-page.component.css']
+  styleUrls: ['./artist-page.component.css'],
+  providers: [ SpotifyService ]
 })
 export class ArtistPageComponent implements OnInit {
 	artistId:string;
@@ -16,6 +19,7 @@ export class ArtistPageComponent implements OnInit {
 	relatedArtists:ArtistData[];
 	topTracks:TrackData[];
 	albums:AlbumData[];
+  artistChanged = new EventEmitter<ResourceData[]>();
 
   constructor(private route: ActivatedRoute, private spotifyService:SpotifyService) {
     this.relatedArtists = [];
@@ -62,6 +66,9 @@ export class ArtistPageComponent implements OnInit {
         this.albums.push(new AlbumData(a));
       });
     });
+    this.artistChanged.emit(this.albums);//emit data*/
+    this.artistChanged.emit(this.relatedArtists);//emit data*/
+    this.artistChanged.emit(this.topTracks);//emit data*/
   }
 
 }
