@@ -26,6 +26,8 @@ export class CarouselComponent implements OnInit {
     <!--carousel-card can bind a single resource as an Input.-->
     <!--"let first=first" sets the "first" variable to be true for the first card in the carousel. The [ngClass] assigns the active property to it-->
     <!--https://stackoverflow.com/questions/44288434/angular-2-ngfor-first-last-index-loop--> */
+    console.log("carouselId:");
+    console.log(this.carouselId);
     this.searchComp.searchChanged.subscribe(
       (data:ResourceData[])=>{
         //console.log("searchChanged:");

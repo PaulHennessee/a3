@@ -6,8 +6,8 @@
 */15
 - 2/2 Communicating with the webserver
 - 2/2 Populating information about the user
-- 2.5/3 Populating the search component
-- 2/3 Artist page
+- 2/3 Populating the search component
+- 3/3 Artist page
 - */2.5 Album page
 - */2.5 Track page
 

@@ -17,7 +17,7 @@
 		<app-carousel [carouselId]="i" [resources]="resources.slice(i, i+1)"></app-carousel>
 	</div>-->
 	<!--only do one carousel-->
-	<app-carousel [carouselId]="myCarousel" [resources]="resources"></app-carousel>
+	<app-carousel carouselId="myCarousel" [resources]="resources"></app-carousel>
 </div>
 <div *ngIf="searchCategory=='track'">
 	<app-track-list [tracks]="resources"></app-track-list>
