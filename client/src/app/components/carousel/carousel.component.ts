@@ -8,7 +8,7 @@ import { ArtistPageComponent } from 'src/app/pages/artist-page/artist-page.compo
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
-  providers: [ SpotifyService , ArtistPageComponent]
+  providers: [ SpotifyService , SearchComponent, ArtistPageComponent]
 })
 export class CarouselComponent implements OnInit {
 	@Input() carouselId:string;
