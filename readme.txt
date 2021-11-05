@@ -21,6 +21,7 @@ Hour Log
 2   10/31/2021  11      Worked on Part 2B
 2   11/2/2021   13      Got 2B working for the most part.
 5   11/4/2021   18      got searchComponent and carousel to a passable point, tracklist comopleted. started artist page
+1   11/5/2021   19      got artist page working.
 
 next time: figure out how to get carousel loading on artist page. hide artist name in table on artist page. linking -> spotify pages?
 
