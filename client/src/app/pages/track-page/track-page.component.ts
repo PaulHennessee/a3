@@ -42,16 +42,23 @@ export class TrackPageComponent implements OnInit {
       //console.log(data);
       //console.log(data["energy"]);
       //Fields: 'danceability', 'energy', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence'
+      this.audioFeatures.push(new TrackFeature("danceability", data["danceability"]));
+      this.audioFeatures.push(new TrackFeature("energy", data["energy"]));
+      this.audioFeatures.push(new TrackFeature("speechiness", data["speechiness"]));
+      this.audioFeatures.push(new TrackFeature("acousticness", data["acousticness"]));
+      this.audioFeatures.push(new TrackFeature("instrumentalness", data["instrumentalness"]));
+      this.audioFeatures.push(new TrackFeature("liveness", data["liveness"]));
+      this.audioFeatures.push(new TrackFeature("valence", data["valence"]));
       /*var it = data.keys();
       while(it.next != null){
         console.log(it);
         it = it.next;
       }//*/
-      Object.keys(data).forEach((field)=>{
+      /*Object.keys(data).forEach((field)=>{
         //console.log(field);
         //console.log(data[field]);
         this.audioFeatures.push(new TrackFeature(field, data[field]));
-      });// 
+      });// */
 
       /*console.log("printing audioFeatuers");
       this.audioFeatures.forEach((element)=>{

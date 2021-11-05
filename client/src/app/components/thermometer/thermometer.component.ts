@@ -14,10 +14,10 @@ export class ThermometerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("therm constructor");
+    /*console.log("therm init");
     console.log(this.name);
     console.log(this.color);
-    console.log(this.percent);
+    console.log(this.percent);*/
   }
 
 }

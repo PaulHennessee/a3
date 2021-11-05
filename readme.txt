@@ -3,13 +3,13 @@
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
-13.5/15
+14/15
 - 2/2 Communicating with the webserver
 - 2/2 Populating information about the user
 - 2/3 Populating the search component
 - 3/3 Artist page
 - 2.5/2.5 Album page
-- 2/2.5 Track page
+- 2.5/2.5 Track page
 
 
 2. How long, in hours, did it take you to complete this assignment?
@@ -23,7 +23,7 @@ Hour Log
 5   11/4/2021   18      got searchComponent and carousel to a passable point, tracklist comopleted. started artist page
 2   11/5/2021   20      got artist page working. got album page working, got most of track page working
 
-Total Time:
+Total Time: 20 hours
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
 Lecture Slides
@@ -36,6 +36,7 @@ select adding options: https://www.w3schools.com/jsref/met_select_add.asp
 onload tag: https://www.w3schools.com/tags/ev_onload.asp
 carousel component: https://stackoverflow.com/questions/44288434/angular-2-ngfor-first-last-index-loop
 bootstrap carousel: https://getbootstrap.com/docs/4.4/components/carousel/
+bootstrap, progress bar: https://getbootstrap.com/docs/4.1/components/progress/
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
