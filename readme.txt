@@ -3,10 +3,10 @@
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
-14/15
+15/15
 - 2/2 Communicating with the webserver
 - 2/2 Populating information about the user
-- 2/3 Populating the search component
+- 3/3 Populating the search component
 - 3/3 Artist page
 - 2.5/2.5 Album page
 - 2.5/2.5 Track page
@@ -21,9 +21,9 @@ Hour Log
 2   10/31/2021  11      Worked on Part 2B
 2   11/2/2021   13      Got 2B working for the most part.
 5   11/4/2021   18      got searchComponent and carousel to a passable point, tracklist comopleted. started artist page
-2   11/5/2021   20      got artist page working. got album page working, got most of track page working
+3   11/5/2021   21      got artist page working. got album page working, got most of track page working, fixed carousel
 
-Total Time: 20 hours
+Total Time: 21 hours
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
 Lecture Slides
@@ -48,5 +48,4 @@ No
 
 
 6. Is there anything special we need to know in order to run your code?
-For Part 2B: Populating Search Component: Carousel displays all carousel components.
-We were not sure how to initialize all of the carousel components but only have one show up at a time.
+No

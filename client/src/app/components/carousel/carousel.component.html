@@ -8,8 +8,18 @@
     <!--<app-carousel-card *ngFor="let first=first" class="carousel-item" [ngClass]="{'active': first}"></app-carousel-card>-->
     <!--<app-carousel-card *ngFor="let carousel-card of carousel-cards; let first=first" [value]="carousel-card" [checked]="first" class="carousel-item" [ngClass]="{'active': first}"></app-carousel-card>-->
     
-    <!--<md-button-toggle *ngFor="let indicador of indicadores; let first = first;" [value]="indicador.id" [checked]="first">-->
-    <app-carousel-card *ngFor="let resourceData of resources; let first=first" [resource]="resourceData"></app-carousel-card>
+    <!-- <md-button-toggle *ngFor="let indicador of indicadores; let first = first;" [value]="indicador.id" [checked]="first"> -->
+    <!--<app-carousel-card [resource]="resourceData"></app-carousel-card>-->
+    <!-- <app-carousel-card [resource]="resourceData" class="carousel-item" [class.active]="testvar"></app-carousel-card> -->
+    
+    <app-carousel-card [resource]="resourceData" *ngFor="let resourceData of resources; let testvar=first" class="carousel-item" [class.active]="testvar"></app-carousel-card>
+    <!-- <p class="carousel-item">item</p> -->
+    <!--<div [ngClass]="active ? carousel-item active : carousel-item">
+      <app-carousel-card [resource]="resourceData"></app-carousel-card>
+    </div>-->
+    <!--<div *ngIf="!active" class="carousel-item">
+      <app-carousel-card [resource]="resourceData"></app-carousel-card>
+    </div>-->
     <!--don't mess with ngClass. it will break everything. it changes the classes accociated with the component.-->
   </div>
   <a class="carousel-control-prev" href="#{{carouselId}}" role="button" data-slide="prev">
